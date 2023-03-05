@@ -9,3 +9,7 @@ By Group 1: Eswara Lakshmanan Abishek, Jennifer Poernomo, Michelle Leong Hwee-Li
 This project is done for IS415 Geospatial Analytics & Applications 2023, under the guidance of Professor Kam Tin Seong.
 
 The project aims to create an an interactive web application that allows users to carry out **spatial point patterns analysis** easily on forest fire hotspot data from Indonesia.
+
+**Important Links**
+
+[Project Proposal](https://is415-fire-incidents-explorer.netlify.app/)
