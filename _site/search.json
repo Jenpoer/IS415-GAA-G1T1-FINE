@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "This is FINE: Fire INcidents Explorer",
+    "section": "",
+    "text": "By Group 1: Eswara Lakshmanan Abishek, Jennifer Poernomo, Michelle Leong Hwee-Ling\nThis project is done for IS415 Geospatial Analytics & Applications 2023, under the guidance of Professor Kam Tin Seong.\nThe project aims to create an an interactive web application that allows users to carry out spatial point patterns analysis easily on forest fire hotspot data from Indonesia."
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "This project involves conducting Spatial Point Pattern Analysis on forest fires in Indonesia. Specifically, we will analyze Indonesian forest fire hotspot data using this method. For this project, a hotspot is defined as a location with a higher temperature than its surroundings as defined by the Indonesian Meteorology, Climatology, and Geophysical Agency.\nThe goal of the project is to create a web application that aims to aid users in performing exploratory data analysis, kernel density estimation, first-order spatial point pattern analysis, second-order spatial point pattern analysis, and spatiotemporal area analysis.\nThe user will be able to make use of the data from all these analysis without needing to write a single of line of code, or needing in depth knowledge about the dataset in the first place, allowing usage of the analysis data for studies or other purposes."
+  },
+  {
+    "objectID": "proposal.html#problem-motivation",
+    "href": "proposal.html#problem-motivation",
+    "title": "Project Proposal",
+    "section": "2. Problem & Motivation",
+    "text": "2. Problem & Motivation\nBetween 2015 and 2019, Singapore experienced severe haze due to forest fires in Indonesia, particularly in the Sumatra and Kalimantan regions. However, there has been little to no haze in the region in recent years. This sparked our interest in investigating the occurrences of forest fires in Indonesia.\nUsing geospatial analytics, we can easily download, manipulate, and analyze data with the R programming language. Geospatial analysis is incredibly useful in extracting insights and patterns from spatial data that may otherwise go unnoticed. However, this method is not easily accessible to individuals with little to no coding experience. Additionally, although there is a lot of data available on the internet, it can be tedious to obtain and consolidate, with some websites requiring users to log in to view the data.\nTo address these issues, we created an interactive web application that allows users to carry out analysis simply through interacting with the user interface. By providing an interactive consolidated platform for users to view data and corresponding analyses, we make the data easily accessible while still allowing for customization through the user interface."
+  },
+  {
+    "objectID": "proposal.html#project-objectives",
+    "href": "proposal.html#project-objectives",
+    "title": "Project Proposal",
+    "section": "3. Project Objectives",
+    "text": "3. Project Objectives\n\nConduct exploratory data analysis and plot a map to gain a rough idea and context of the data being analyzed.\nConduct a first-order spatial point pattern analysis:\n\nUse kernel density estimation and plot the kernel density map for the fires.\n\nConduct a second-order spatial point pattern analysis:\n\nUse appropriate functions from F, G, K, and L for spatial cluster analysis.\nConduct a complete spatial randomness test, then a Monte Carlo test.\n\nConduct spatiotemporal cluster analysis."
+  },
+  {
+    "objectID": "proposal.html#main-features",
+    "href": "proposal.html#main-features",
+    "title": "Project Proposal",
+    "section": "4. Main Features",
+    "text": "4. Main Features\nThis application mainly provides features to aid users in conducting Spatial Point Patterns Analysis.\n\nFeature 1: Exploratory Data Analysis\nUsers can view an interactive point map of specific forest fire hotspots and filter them based on certain conditions.\nThe options that the users are able to filter by are:\n\nRegion (Provinsi, Kabupaten, Kelurahan)\nSatellites\nYear\nDate (updates map accordingly)\n\nUsers can also explore the temporal distribution of the data through time series charts of frequency of point events by time.\nThe options that the users are able to filter by are:\n\nRegion\nDate range\n\n\n\nFeature 2: Kernel Density Estimation Map\nUsers are able to conduct first-order spatial point patterns analysis by viewing kernel density estimation maps of forest fire hotspots.\nThe adjustable parameters are:\n\nRegion of interest\nSpecific date (choices are derived from data available of that region)\nKernel\nBandwidth (automatic — user can choose from a spatstat function, fixed — numeric value, or adaptive — user can choose a method)\n\n\n\nFeature 3: Spatial Cluster Analysis\nUsers are able to conduct second-order spatial point patterns analysis to identify and statistically confirm possible interactions between events.\nThe users will be able to conduct Monte-Carlo simulations to test for Complete Spatial Randomness (CSR), i.e. whether or not events in a given region are independently distributed and the number of events follows a homogenous Poisson distribution.\nThe functions that the users can use to measure second-order properties are:\n\nG-Function\nF-Function\nK-Function\nL-Function\n\nThe adjustable parameters are:\n\nRegion of interest\nSpecific date (choices are derived from data available of that region)\nNumber of simulations\nCorrection function\n\n\n\nFeature 4: Spatiotemporal Area Analysis\nUsers are able to conduct spatiotemporal analysis by area. Users are able to view choropleth maps of aggregated fire hotspot data by kelurahan (sub-district) level, as well as identify changes in spatial hot spots and cold spots over time.\n\n\n\n\n\n\nNote: “Spatial hot spots” refer to clusters with significantly high number of fire hotspots.\n\n\n\nUsers can do two types of analysis:\n\nMann-Kendall Test to identify if fire hotspots are increasing or decreasing over time\nEmerging hot spot analysis using Gi*\n\nThe adjustable parameters are:\n\nRegion of interest\nDate range\nNumber of simulations\nType of contiguity weights (Row-standardised Queen, Bishop, Inverse Distance)\nSignificance level"
+  },
+  {
+    "objectID": "proposal.html#data-source",
+    "href": "proposal.html#data-source",
+    "title": "Project Proposal",
+    "section": "5. Data Source",
+    "text": "5. Data Source\nThe data is sourced from SiPongi+ (https://sipongi.menlhk.go.id/), the official forest fire data portal of the Indonesian Ministry of Environment and Forestry. You can download spatial point data of forest fire hotspots from the portal. The Indonesian Meteorology, Climatology, and Geophysical Agency (2023) defines hotspots as locations where the temperature detected by monitoring satellites is higher than surrounding areas. It is measured in a pre-defined area, so it does not directly correspond to the number of forest fire occurrences. However, it still functions as a good indicator of forest fire incidents and possibly an estimation of the scale of the incident."
+  },
+  {
+    "objectID": "proposal.html#literature-review",
+    "href": "proposal.html#literature-review",
+    "title": "Project Proposal",
+    "section": "6. Literature Review",
+    "text": "6. Literature Review\n\nSpatial and temporal pattern of the human-caused forest fire occurrences in Korea\nAuthors: Han-Bin Kwak, Woo-Kyun Lee, Myoung-Soo Won, Kyo-Sang Koo, Myung-Bo Lee, Sang-Chul Lee\nSource\nSummary:\n\nSpatial intensity of human-caused forest fire in Korea was analysed using Kernel intensity index\nSpatial clustering of forest fire point data was analysed using Ripley’s K function\n\nRelation to our project:\n\nForest fire hotspots will be analysed by kernel density, spatial cluster analysis, and spatio temporal analysis\nSpatial clustering of hotspots will be analysed using K, L, F, G functions\n\n\n\nSpatiotemporal Patterns of Burned Areas Based on the Geographic Information System for Fire Risk Monitoring\nAuthors: Muhammad Muhaimin, Dedi Rosadi, Aswin Nur Saputra, Karunia Puji Hastuti, Ismi Rajiani\nSource\nSummary:\n\nBurned area data for the study were collected from SiPongi+\nStudy area was confined to South Kalimantan province for four years from 2016-2019\nSpatiotemporal hot spot analysis was performed using Getis-Ord Gi* statistic and Moran’s index on aggregated data of the burn area\nDensity of land fires were analysed using kernel density\n\nRelation to our project:\n\nAnalysis on forest fire data in Sumatra between the years of 2015 - 2019\nUsage of Getis-Ord Gi* statistics to identify the changes in hot spots and cold spots over time"
+  },
+  {
+    "objectID": "proposal.html#comparison-to-existing-applications",
+    "href": "proposal.html#comparison-to-existing-applications",
+    "title": "Project Proposal",
+    "section": "7. Comparison to Existing Applications",
+    "text": "7. Comparison to Existing Applications\n\nSiPongi+\nLink\nSiPongi+ is the official forest fire data portal of the Indonesian Ministry of Environment and Forestry. This web application features an interactive map displaying daily forest fire hotspot data as point events. Users can download historical hotspot data filtered by region, time range, satellite type, and confidence level. Additionally, the portal provides annual data on carbon dioxide emissions and burnt area by province/city.\n\n\nLAPAN’s BRIN Fire Hotspot\nLink\nBRIN Fire Hotspot is the official forest fire data portal of the Indonesian National Institute of Aeronautics and Space (LAPAN). According to the usage guide, the web application displays hotspots collected from satellites above Indonesia and enables users to filter by region, time, and confidence level. Users can view a summary of the total hotspots from all satellites and their confidence levels.\nCompared to SiPongi+, the main difference is that BRIN Fire Hotspot allows users to select between two view modes: pixel or cluster. In pixel mode, every individual hotspot point is shown, whereas cluster mode aggregates them into a single centroid based on the clusters to which the hotspots belong. Additionally, users can see a radius of the heat intensity. Users can also download the hotspot point data in CSV format.\n\n\nFIRMS\nLink\nFire Information for Resource Management System is an application created by NASA. Records active fires as well as any fire related data throughout Earth. Allows users to even observe time since detection of fire incidents by hotspots, in hours (from 1 hr since detection to >24 hrs ) . Users can switch between data obtained from different sattelites. Further, they can also view the orbitting paths of the sattelites they use for viewing\nShows data of gridded fire hotspots which have varying colours to show the frequency of fire incidents in those grids. This provides a count of fire hotspots within 0.25 x 0.25 degree grid size for the MODIS( Moderate Resolution Imaging Spectroradiometer) and VIIRS( Visible Infrared Imaging Radiometer Suite) devices mounted on the sattelites.\nUsers can observe historical data as well as current real time data of hotspots. Historical data allows the user to view hotspot data as per selected date, while current shows hotspot data up to a week.\n\n\nOur application: FINE\nIn comparison to existing applications, our application provides greater spatial analysis capabilities. Users can perform first-order and second-order point pattern analyses on regions of interest. Additionally, FINE makes it easier for users to analyse the progression of forest fire incidents over time."
+  },
+  {
+    "objectID": "proposal.html#ui-prototype",
+    "href": "proposal.html#ui-prototype",
+    "title": "Project Proposal",
+    "section": "8. UI Prototype",
+    "text": "8. UI Prototype\n\n1 - EDA2 - KDE3 - Spatial Cluster4 - Spatiotemporal"
+  },
+  {
+    "objectID": "proposal.html#application-architecture",
+    "href": "proposal.html#application-architecture",
+    "title": "Project Proposal",
+    "section": "9. Application Architecture",
+    "text": "9. Application Architecture"
+  },
+  {
+    "objectID": "proposal.html#timeline",
+    "href": "proposal.html#timeline",
+    "title": "Project Proposal",
+    "section": "10. Timeline",
+    "text": "10. Timeline"
+  }
+]

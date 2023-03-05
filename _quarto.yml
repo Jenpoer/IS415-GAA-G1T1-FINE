@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "FINE: Fire INcidents Explorer"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: proposal.qmd
+        text: Project Proposal
+
+format:
+  html:
+    theme: united
+    css: styles.css
+    toc: true
+
+editor: visual
+
