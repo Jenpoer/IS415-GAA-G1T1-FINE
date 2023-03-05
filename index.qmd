@@ -12,4 +12,4 @@ The project aims to create an an interactive web application that allows users t
 
 **Important Links**
 
-[Project Proposal](https://is415-fire-incidents-explorer.netlify.app/)
+[Project Proposal](https://is415-fire-incidents-explorer.netlify.app/proposal.html)
