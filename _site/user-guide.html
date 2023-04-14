@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>FINE: Fire INcidents Explorer - User Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FINE: Fire INcidents Explorer</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./proposal.html">
+ <span class="menu-text">Project Proposal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./user-guide.html" aria-current="page">
+ <span class="menu-text">User Guide</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#important-terminology" id="toc-important-terminology" class="nav-link active" data-scroll-target="#important-terminology">Important Terminology</a></li>
+  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#point-map" id="toc-point-map" class="nav-link" data-scroll-target="#point-map">Point Map</a></li>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series">Time Series</a></li>
+  </ul></li>
+  <li><a href="#kernel-density" id="toc-kernel-density" class="nav-link" data-scroll-target="#kernel-density">Kernel Density</a></li>
+  <li><a href="#spatial-cluster" id="toc-spatial-cluster" class="nav-link" data-scroll-target="#spatial-cluster">Spatial Cluster</a></li>
+  <li><a href="#spatiotemporal" id="toc-spatiotemporal" class="nav-link" data-scroll-target="#spatiotemporal">Spatiotemporal</a>
+  <ul class="collapse">
+  <li><a href="#space-time-k-function" id="toc-space-time-k-function" class="nav-link" data-scroll-target="#space-time-k-function">Space-time K-function</a></li>
+  <li><a href="#emerging-hot-spot-analysis-ehsa" id="toc-emerging-hot-spot-analysis-ehsa" class="nav-link" data-scroll-target="#emerging-hot-spot-analysis-ehsa">Emerging Hot Spot Analysis (EHSA)</a></li>
+  <li><a href="#mann-kendall" id="toc-mann-kendall" class="nav-link" data-scroll-target="#mann-kendall">Mann-Kendall</a></li>
+  </ul></li>
+  <li><a href="#errors" id="toc-errors" class="nav-link" data-scroll-target="#errors">Errors</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">User Guide</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This is the user guide for FINE. You can access the Shiny application <a href="https://jenpoer.shinyapps.io/is415-fire-incidents-explorer/">here</a>.</p>
+<section id="important-terminology" class="level1">
+<h1>Important Terminology</h1>
+<ul>
+<li><p>(Fire) hotspots: Locations where the temperature detected by monitoring satellites is higher than surrounding areas (<a href="https://staklim-riau.bmkg.go.id/infografis/detail/aTJhd0tCU1QxM2Z2dng5Q0phRTZFUT09">Indonesian Meteorology, Climatology, and Geophysical Agency, 2023</a>)</p></li>
+<li><p>Administrative Divisions of Indonesia:</p>
+<ul>
+<li><p>Province: First-level administrative division - corresponds to “provinsi” or “daerah istimewa” (as in the case of Aceh)</p></li>
+<li><p>City/Regency: Second-level administrative division - corresponds to “kota”/“kabupaten” respectively</p></li>
+<li><p>District: Third-level administrative division - corresponds to “kecamatan”</p></li>
+<li><p>Sub-district: Fourth-level administrative division - corresponds to “desa” or “kelurahan”</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="navigation" class="level1">
+<h1>Navigation</h1>
+<p>The Navigation bar is the primary mode of navigating the app. It is present at the top of every page.</p>
+<p><img src="images/User Guide/navbar.png" class="img-fluid"></p>
+<p>By default, un-selected pages appear as white text. The active page has a darker background and the text is highlighted orange. Clicking on an un-selected link will bring you to that page.</p>
+<p>Upon accessing the application for the first time, the Home page will be the active page by default. It provides an overview of the application.</p>
+</section>
+<section id="exploratory-data-analysis" class="level1">
+<h1>Exploratory Data Analysis</h1>
+<section id="point-map" class="level2">
+<h2 class="anchored" data-anchor-id="point-map">Point Map</h2>
+<p>The first tab of the Exploratory Data Analysis page is the interactive point map. It allows users to view information about individual fire hotspots that have been detected.</p>
+<p><img src="images/User Guide/EDA_point_map_default.png" class="img-fluid"></p>
+<p>There are several aspects users can filter by. Users can select a specific area to examine, be it by province, city/regency, district, or sub-district. Users can also select one or multiple satellite types that the points were detected by, as different satellites may give different levels of detail and accuracy in detecting fire hotspots. Additionally, users can also select a date range that they would like to filter by using a slider. The left knob represents the start date and the right knob represents the end date.</p>
+<p>By default, the latest hotspots within the date range will be highlighted in red, whereas all other points will be colored pink.</p>
+<p>However, users can also choose to color the points by the confidence levels with which the satellites detected the hotspots. This is done by selecting the “Color by confidence level?” checkbox:</p>
+<p><img src="images/User Guide/EDA_point_map_confidence.png" class="img-fluid"></p>
+</section>
+<section id="time-series" class="level2">
+<h2 class="anchored" data-anchor-id="time-series">Time Series</h2>
+<p>The second tab of the Exploratory Data Analysis page allows users to view time series plots of aggregated count of hotspots within a year.</p>
+<p><img src="images/User Guide/EDA_time_series_default.png" class="img-fluid"></p>
+<p>Like the point map, users can select a specific area to examine, be it by province, city/regency, district, or sub-district. However, instead of a flexible date range, users can only select a specific year from 2015-2019, as the count of hotspots are aggregated by month.</p>
+<p>Users can also select one or more confidence levels to filter by. In this case, the count of hotspots will be aggregated by both month and confidence level, with each time series being displayed in a different color according to the confidence level.</p>
+<p><img src="images/User Guide/EDA_time_series_confidence.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="kernel-density" class="level1">
+<h1>Kernel Density</h1>
+</section>
+<section id="spatial-cluster" class="level1">
+<h1>Spatial Cluster</h1>
+</section>
+<section id="spatiotemporal" class="level1">
+<h1>Spatiotemporal</h1>
+<section id="space-time-k-function" class="level2">
+<h2 class="anchored" data-anchor-id="space-time-k-function">Space-time K-function</h2>
+<p>The space-time K-function is a statistical tool used in spatiotemporal analysis to study the clustering or dispersion of point events in both space and time. It extends the classical spatial Ripley’s K-function to incorporate the time dimension and allows for the analysis of spatiotemporal point patterns. In the inhomogenous case, it takes into account the spatial and temporal variation in the intensity of the point process under study. Meanwhile, the homogenous case assumes that the underlying process generating the point pattern is constant in space and time.</p>
+<p>Users can input a specific sub-district to look for spatiotemporal autocorrelation throughout a specific year. All fields of the filter must be filled before an output can be computed.</p>
+<p>There are three possible types of outputs, adjusted by the Plot Type selection dropdown: Contour, Image, and Perspective.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Contour</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Image</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Perspective</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="images/User Guide/Spatiotemporal_STIK_contour.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="images/User Guide/Spatiotemporal_STIK_image.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="images/User Guide/Spatiotemporal_STIK_perspective.png" class="img-fluid"></p>
+<p>For perspective plots, there are two additional parameters that can be adjusted: azimuthal angle and colatitude. They are in the form of sliders bounded from 0-360. This allows users to adjust the perspective of the 3D plot. Azimuthal Angle rotates the perspective horizontally, whereas Colatitude rotates the perspective vertically.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="emerging-hot-spot-analysis-ehsa" class="level2">
+<h2 class="anchored" data-anchor-id="emerging-hot-spot-analysis-ehsa">Emerging Hot Spot Analysis (EHSA)</h2>
+<p>Emerging Hot Spot Analysis (EHSA) is a spatiotemporal analysis technique used to identify locations where the density of a specific event is increasing or decreasing rapidly over time, referred to as “hot spots” and “cold spots” respectively.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+‘Hot spot’ in this context does not refer to fire hotspots, but spatial clusters with significantly high number of fire hotspots.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p><img src="images/User Guide/Spatiotemporal_EHSA.png" class="img-fluid"></p>
+<p>Users can perform EHSA on an areal basis using aggregated count of fire hotspots within a province or a city over a certain year. The analysis is done by computing local Gi* statistics on each of the sub-districts and performing a Mann-Kendall statistical test. Users can further customise how the test is performed by specifying number of time lags, number of simulations, and a significance threshold.</p>
+</section>
+<section id="mann-kendall" class="level2">
+<h2 class="anchored" data-anchor-id="mann-kendall">Mann-Kendall</h2>
+<p>The Mann-Kendall test is a non-parametric statistical test used to detect whether a set of data values is monotonically increasing or decreasing, as well as the statistical significance of the trend. It is particularly useful when the data is not normally distributed or when the data has a significant amount of noise. This section is aimed to help users further drill down on the insights they have gotten from the EHSA tab by performing Mann-Kendall tests on computed Gi* statistics within a sub-district in a specified year.</p>
+<p>Additionally, users can specify the number of simulations and type of contiguity weights they want to use to compute the Gi* statistics.</p>
+<p><img src="images/User Guide/Spatiotemporal_Mann_Kendall.png" class="img-fluid"></p>
+<p>The output is a time series plot showing the change of Gi* statistic over the year and a table containing the result of the Mann-Kendall test.</p>
+</section>
+</section>
+<section id="errors" class="level1">
+<h1>Errors</h1>
+<p><img src="images/User Guide/error.png" class="img-fluid"></p>
+<p>When an error occurs, a popup message stating the cause of the error will appear. Click “Ok” to close the popup, then adjust the parameters accordingly to fix the error.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
