@@ -2,6 +2,10 @@
 title: "Project Proposal"
 ---
 
+::: callout-note
+For the overview of the final product, click [here](https://is415-fire-incidents-explorer.netlify.app/overview.html).
+:::
+
 ## 1. Abstract
 
 This project involves conducting Spatial Point Pattern Analysis on forest fires in Indonesia. Specifically, we will analyze Indonesian forest fire hotspot data using this method. For this project, a hotspot is defined as a location with a higher temperature than its surroundings as defined by the Indonesian Meteorology, Climatology, and Geophysical Agency.

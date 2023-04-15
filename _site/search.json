@@ -66,15 +66,15 @@
     "objectID": "overview.html#timeline",
     "href": "overview.html#timeline",
     "title": "Project Overview",
-    "section": "10. Timeline",
-    "text": "10. Timeline"
+    "section": "9. Timeline",
+    "text": "9. Timeline"
   },
   {
     "objectID": "proposal.html",
     "href": "proposal.html",
     "title": "Project Proposal",
     "section": "",
-    "text": "This project involves conducting Spatial Point Pattern Analysis on forest fires in Indonesia. Specifically, we will analyze Indonesian forest fire hotspot data using this method. For this project, a hotspot is defined as a location with a higher temperature than its surroundings as defined by the Indonesian Meteorology, Climatology, and Geophysical Agency.\nThe goal of the project is to create a web application that aims to aid users in performing exploratory data analysis, kernel density estimation, first-order spatial point pattern analysis, second-order spatial point pattern analysis, and spatiotemporal area analysis.\nThe user will be able to make use of the data from all these analysis without needing to write a single of line of code, or needing in depth knowledge about the dataset in the first place, allowing usage of the analysis data for studies or other purposes."
+    "text": "Note\n\n\n\nFor the overview of the final product, click here."
   },
   {
     "objectID": "proposal.html#problem-motivation",
@@ -185,6 +185,13 @@
     "objectID": "overview.html#abstract",
     "href": "overview.html#abstract",
     "title": "Project Overview",
+    "section": "1. Abstract",
+    "text": "1. Abstract\nThis project involves conducting Spatial Point Pattern Analysis on forest fires in Indonesia. Specifically, we will analyze Indonesian forest fire hotspot data using this method. For this project, a hotspot is defined as a location with a higher temperature than its surroundings as defined by the Indonesian Meteorology, Climatology, and Geophysical Agency.\nThe goal of the project is to create a web application that aims to aid users in performing exploratory data analysis, kernel density estimation, first-order spatial point pattern analysis, second-order spatial point pattern analysis, and spatiotemporal area analysis.\nThe user will be able to make use of the data from all these analysis without needing to write a single of line of code, or needing in depth knowledge about the dataset in the first place, allowing usage of the analysis data for studies or other purposes."
+  },
+  {
+    "objectID": "proposal.html#abstract",
+    "href": "proposal.html#abstract",
+    "title": "Project Proposal",
     "section": "1. Abstract",
     "text": "1. Abstract\nThis project involves conducting Spatial Point Pattern Analysis on forest fires in Indonesia. Specifically, we will analyze Indonesian forest fire hotspot data using this method. For this project, a hotspot is defined as a location with a higher temperature than its surroundings as defined by the Indonesian Meteorology, Climatology, and Geophysical Agency.\nThe goal of the project is to create a web application that aims to aid users in performing exploratory data analysis, kernel density estimation, first-order spatial point pattern analysis, second-order spatial point pattern analysis, and spatiotemporal area analysis.\nThe user will be able to make use of the data from all these analysis without needing to write a single of line of code, or needing in depth knowledge about the dataset in the first place, allowing usage of the analysis data for studies or other purposes."
   }

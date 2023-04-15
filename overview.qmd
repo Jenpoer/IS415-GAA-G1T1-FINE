@@ -280,6 +280,6 @@ In comparison to existing applications, our application provides greater spatial
 
 -   **stpp**: for analysing spatiotemporal point patterns
 
-## 10. Timeline
+## 9. Timeline
 
 ![](images/Gantt%20chart.png)
