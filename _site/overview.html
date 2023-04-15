@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>FINE: Fire INcidents Explorer - Project Proposal</title>
+<title>FINE: Fire INcidents Explorer - Project Overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,11 +84,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./overview.html">
+    <a class="nav-link active" href="./overview.html" aria-current="page">
  <span class="menu-text">Project Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./proposal.html" aria-current="page">
+    <a class="nav-link" href="./proposal.html">
  <span class="menu-text">Project Proposal</span></a>
   </li>  
   <li class="nav-item">
@@ -118,13 +118,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#feature-1-exploratory-data-analysis" id="toc-feature-1-exploratory-data-analysis" class="nav-link" data-scroll-target="#feature-1-exploratory-data-analysis">Feature 1: Exploratory Data Analysis</a></li>
   <li><a href="#feature-2-kernel-density-estimation-map" id="toc-feature-2-kernel-density-estimation-map" class="nav-link" data-scroll-target="#feature-2-kernel-density-estimation-map">Feature 2: Kernel Density Estimation Map</a></li>
   <li><a href="#feature-3-spatial-cluster-analysis" id="toc-feature-3-spatial-cluster-analysis" class="nav-link" data-scroll-target="#feature-3-spatial-cluster-analysis">Feature 3: Spatial Cluster Analysis</a></li>
-  <li><a href="#feature-4-spatiotemporal-area-analysis" id="toc-feature-4-spatiotemporal-area-analysis" class="nav-link" data-scroll-target="#feature-4-spatiotemporal-area-analysis">Feature 4: Spatiotemporal Area Analysis</a></li>
+  <li><a href="#feature-4-spatiotemporal-analysis" id="toc-feature-4-spatiotemporal-analysis" class="nav-link" data-scroll-target="#feature-4-spatiotemporal-analysis">Feature 4: Spatiotemporal Analysis</a></li>
   </ul></li>
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">5. Data Source</a></li>
   <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review">6. Literature Review</a>
   <ul class="collapse">
   <li><a href="#spatial-and-temporal-pattern-of-the-human-caused-forest-fire-occurrences-in-korea" id="toc-spatial-and-temporal-pattern-of-the-human-caused-forest-fire-occurrences-in-korea" class="nav-link" data-scroll-target="#spatial-and-temporal-pattern-of-the-human-caused-forest-fire-occurrences-in-korea">Spatial and temporal pattern of the human-caused forest fire occurrences in Korea</a></li>
   <li><a href="#spatiotemporal-patterns-of-burned-areas-based-on-the-geographic-information-system-for-fire-risk-monitoring" id="toc-spatiotemporal-patterns-of-burned-areas-based-on-the-geographic-information-system-for-fire-risk-monitoring" class="nav-link" data-scroll-target="#spatiotemporal-patterns-of-burned-areas-based-on-the-geographic-information-system-for-fire-risk-monitoring">Spatiotemporal Patterns of Burned Areas Based on the Geographic Information System for Fire Risk Monitoring</a></li>
+  <li><a href="#spatio-temporal-analysis-of-point-patterns" id="toc-spatio-temporal-analysis-of-point-patterns" class="nav-link" data-scroll-target="#spatio-temporal-analysis-of-point-patterns">Spatio-Temporal Analysis of Point Patterns</a></li>
   </ul></li>
   <li><a href="#comparison-to-existing-applications" id="toc-comparison-to-existing-applications" class="nav-link" data-scroll-target="#comparison-to-existing-applications">7. Comparison to Existing Applications</a>
   <ul class="collapse">
@@ -133,8 +134,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#firms" id="toc-firms" class="nav-link" data-scroll-target="#firms">FIRMS</a></li>
   <li><a href="#our-application-fine" id="toc-our-application-fine" class="nav-link" data-scroll-target="#our-application-fine">Our application: FINE</a></li>
   </ul></li>
-  <li><a href="#ui-prototype" id="toc-ui-prototype" class="nav-link" data-scroll-target="#ui-prototype">8. UI Prototype</a></li>
-  <li><a href="#application-architecture" id="toc-application-architecture" class="nav-link" data-scroll-target="#application-architecture">9. Application Architecture</a></li>
+  <li><a href="#application-design" id="toc-application-design" class="nav-link" data-scroll-target="#application-design">8. Application Design</a>
+  <ul class="collapse">
+  <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a></li>
+  <li><a href="#packages-used" id="toc-packages-used" class="nav-link" data-scroll-target="#packages-used">Packages Used</a></li>
+  </ul></li>
   <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">10. Timeline</a></li>
   </ul>
 </nav>
@@ -144,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Proposal</h1>
+<h1 class="title">Project Overview</h1>
 </div>
 
 
@@ -159,6 +163,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the conceptual (proposal) version of the project, click <a href="https://is415-fire-incidents-explorer.netlify.app/proposal.html">here</a>.</p>
+</div>
+</div>
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">1. Abstract</h2>
 <p>This project involves conducting Spatial Point Pattern Analysis on forest fires in Indonesia. Specifically, we will analyze Indonesian forest fire hotspot data using this method. For this project, a hotspot is defined as a location with a higher temperature than its surroundings as defined by the Indonesian Meteorology, Climatology, and Geophysical Agency.</p>
@@ -195,16 +212,18 @@ ul.task-list li input[type="checkbox"] {
 <p>Users can view an <strong>interactive point map</strong> of specific forest fire hotspots and filter them based on certain conditions.</p>
 <p>The options that the users are able to filter by are:</p>
 <ul>
-<li><p>Region (Provinsi, Kabupaten, Kelurahan)</p></li>
+<li><p>Region (Province, City/Regency, District, Sub-district)</p></li>
 <li><p>Satellites</p></li>
 <li><p>Year</p></li>
-<li><p>Date (updates map accordingly)</p></li>
+<li><p>Confidence level</p></li>
+<li><p>Date range</p></li>
 </ul>
 <p>Users can also explore the temporal distribution of the data through <strong>time series charts</strong> of frequency of point events by time.</p>
 <p>The options that the users are able to filter by are:</p>
 <ul>
 <li><p>Region</p></li>
-<li><p>Date range</p></li>
+<li><p>Year</p></li>
+<li><p>Confidence level</p></li>
 </ul>
 </section>
 <section id="feature-2-kernel-density-estimation-map" class="level3">
@@ -215,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Region of interest</p></li>
 <li><p>Specific date (choices are derived from data available of that region)</p></li>
 <li><p>Kernel</p></li>
-<li><p>Bandwidth (automatic — user can choose from a spatstat function, fixed — numeric value, or adaptive — user can choose a method)</p></li>
+<li><p>Bandwidth (fixed — numeric value or adaptive — user can choose a method)</p></li>
 </ul>
 </section>
 <section id="feature-3-spatial-cluster-analysis" class="level3">
@@ -237,9 +256,11 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Correction function</p></li>
 </ul>
 </section>
-<section id="feature-4-spatiotemporal-area-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="feature-4-spatiotemporal-area-analysis">Feature 4: Spatiotemporal Area Analysis</h3>
-<p>Users are able to conduct <strong>spatiotemporal analysis by area</strong>. Users are able to view <strong>choropleth maps</strong> of aggregated fire hotspot data by kelurahan (sub-district) level, as well as <strong>identify changes in spatial hot spots and cold spots over time</strong>.</p>
+<section id="feature-4-spatiotemporal-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="feature-4-spatiotemporal-analysis">Feature 4: Spatiotemporal Analysis</h3>
+<p>Users are able to conduct <strong>spatiotemporal analysis</strong> at point level and at area level.</p>
+<p>For point-level analysis, users can compute the <strong>space-time K-function</strong> for a specific sub-district in a specific year and view either a <strong>contour plot</strong>, <strong>image plot</strong>, or <strong>perspective plot</strong> of the results.</p>
+<p>For area-level analysis, users are able to view <strong>choropleth maps</strong> of aggregated fire hotspot data by sub-district, as well as <strong>identify changes in spatial hot spots and cold spots over time</strong>.</p>
 <div class="callout-note callout callout-style-simple">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -250,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Users can do two types of analysis:</p>
+<p>Users can do two types of area-level analysis:</p>
 <ul>
 <li><p>Mann-Kendall Test to identify if fire hotspots are increasing or decreasing over time</p></li>
 <li><p>Emerging hot spot analysis using Gi*</p></li>
@@ -258,9 +279,9 @@ ul.task-list li input[type="checkbox"] {
 <p>The adjustable parameters are:</p>
 <ul>
 <li><p>Region of interest</p></li>
-<li><p>Date range</p></li>
+<li><p>Year</p></li>
 <li><p>Number of simulations</p></li>
-<li><p>Type of contiguity weights (Row-standardised Queen, Bishop, Inverse Distance)</p></li>
+<li><p>Type of contiguity weights (Row-standardised, Inverse Distance)</p></li>
 <li><p>Significance level</p></li>
 </ul>
 </section>
@@ -282,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Relation to our project:</p>
 <ul>
-<li><p>Forest fire hotspots will be analysed by kernel density, spatial cluster analysis, and spatio temporal analysis</p></li>
+<li><p>Forest fire hotspots will be analysed by kernel density, spatial cluster analysis, and spatiotemporal analysis</p></li>
 <li><p>Spatial clustering of hotspots will be analysed using K, L, F, G functions</p></li>
 </ul>
 </section>
@@ -301,6 +322,22 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Analysis on forest fire data in Sumatra between the years of 2015 - 2019</p></li>
 <li><p>Usage of Getis-Ord Gi* statistics to identify the changes in hot spots and cold spots over time</p></li>
+</ul>
+</section>
+<section id="spatio-temporal-analysis-of-point-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="spatio-temporal-analysis-of-point-patterns">Spatio-Temporal Analysis of Point Patterns</h3>
+<p>Author: Abdul-Nasah Soale</p>
+<p><a href="https://dc.etsu.edu/etd/3120/">Source</a></p>
+<p>Summary:</p>
+<ul>
+<li><p>Spatiotemporal point pattern analysis on earthquakes performed using space-time inhomogenous K-function and pair correlation function.</p></li>
+<li><p>Spatial distribution was examined using map plots.</p></li>
+<li><p>Temporal distribution was examined using time series plots and box plots.</p></li>
+</ul>
+<p>Relation to our project:</p>
+<ul>
+<li><p>Usage of space-time K-function for spatiotemporal analysis at point level</p></li>
+<li><p>Time series plots are incorporated into Exploratory Data Analysis to examine temporal distribution of count of hotspots.</p></li>
 </ul>
 </section>
 </section>
@@ -329,32 +366,52 @@ ul.task-list li input[type="checkbox"] {
 <p>In comparison to existing applications, our application provides greater spatial analysis capabilities. Users can perform first-order and second-order point pattern analyses on regions of interest. Additionally, FINE makes it easier for users to analyse the progression of forest fire incidents over time.</p>
 </section>
 </section>
-<section id="ui-prototype" class="level2">
-<h2 class="anchored" data-anchor-id="ui-prototype">8. UI Prototype</h2>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">1 - EDA</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">2 - KDE</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">3 - Spatial Cluster</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">4 - Spatiotemporal</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><img src="images/UI Prototype/EDA-1.png" class="img-fluid"></p>
-<p><img src="images/UI Prototype/EDA-2.png" class="img-fluid"></p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><img src="images/UI Prototype/KDE-1.png" class="img-fluid"></p>
-<p><img src="images/UI Prototype/KDE-2.png" class="img-fluid"></p>
-<p><img src="images/UI Prototype/KDE-3.png" class="img-fluid"></p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><img src="images/UI Prototype/Spatial-Cluster-1.png" class="img-fluid"></p>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<p><img src="images/UI Prototype/Spatiotemporal-1.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="application-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="application-architecture">9. Application Architecture</h2>
+<section id="application-design" class="level2">
+<h2 class="anchored" data-anchor-id="application-design">8. Application Design</h2>
+<section id="architecture" class="level3">
+<h3 class="anchored" data-anchor-id="architecture">Architecture</h3>
 <p><img src="images/IS415_Archi.png" class="img-fluid"></p>
+</section>
+<section id="packages-used" class="level3">
+<h3 class="anchored" data-anchor-id="packages-used">Packages Used</h3>
+<section id="ui-utility" class="level4">
+<h4 class="anchored" data-anchor-id="ui-utility">UI &amp; Utility</h4>
+<ul>
+<li><strong>tidyverse</strong>: for data processing</li>
+</ul>
+<p><strong>sf</strong>: for working with geospatial data</p>
+<ul>
+<li><p><strong>shiny</strong>: for creating a web application</p></li>
+<li><p><strong>fresh</strong>: for theming</p></li>
+<li><p><strong>shinyjs</strong>: for incorporating Javascript behavior into UI</p></li>
+<li><p><strong>shinycssloaders</strong>: for loading bars</p></li>
+<li><p><strong>shinyalert</strong>: for popups</p></li>
+</ul>
+</section>
+<section id="exploratory-data-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h4>
+<ul>
+<li><p><strong>tmap</strong>: for creating an interactive map</p></li>
+<li><p><strong>ggplot</strong>: for creating time series chart</p></li>
+</ul>
+</section>
+<section id="kernel-density-estimation-spatial-cluster" class="level4">
+<h4 class="anchored" data-anchor-id="kernel-density-estimation-spatial-cluster">Kernel Density Estimation &amp; Spatial Cluster</h4>
+<ul>
+<li><p><strong>maptools</strong>: a set of tools for manipulating geographic data</p></li>
+<li><p><strong>raster</strong>: reads, writes, manipulates, analyses, and model gridded spatial data (raster)</p></li>
+<li><p><strong>spatstat</strong>: for performing spatial point patterns analysis</p></li>
+<li><p><strong>sfdep</strong>: for analysing spatial dependencies</p></li>
+</ul>
+</section>
+<section id="spatiotemporal" class="level4">
+<h4 class="anchored" data-anchor-id="spatiotemporal">Spatiotemporal</h4>
+<ul>
+<li><p><strong>sfdep</strong>: for analysing spatial dependencies</p></li>
+<li><p><strong>stpp</strong>: for analysing spatiotemporal point patterns</p></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="timeline" class="level2">
 <h2 class="anchored" data-anchor-id="timeline">10. Timeline</h2>

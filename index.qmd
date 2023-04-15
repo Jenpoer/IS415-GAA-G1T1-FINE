@@ -12,10 +12,12 @@ The project aims to create an interactive web application that allows users to c
 
 **Important Links**
 
+[Project Overview](https://is415-fire-incidents-explorer.netlify.app/overview.html)
+
 [Project Proposal](https://is415-fire-incidents-explorer.netlify.app/proposal.html)
 
 [Shiny Application](https://jenpoer.shinyapps.io/is415-fire-incidents-explorer/)
 
-User Guide
+[User Guide](https://is415-fire-incidents-explorer.netlify.app/user-guide.html)
 
 Research Paper
