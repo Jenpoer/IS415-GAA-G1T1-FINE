@@ -74,11 +74,11 @@ Users are able to conduct **first-order spatial point patterns analysis** by vie
 
 The adjustable parameters are:
 
--   Region of interest
+-   Region of interest - province and city
 
--   Specific date (choices are derived from data available of that region)
+-   Specific year of observation
 
--   Kernel
+-   Kernel function
 
 -   Bandwidth (fixed --- numeric value or adaptive --- user can choose a method)
 

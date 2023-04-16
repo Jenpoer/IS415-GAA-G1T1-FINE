@@ -58,6 +58,14 @@ Users can also select one or more confidence levels to filter by. In this case, 
 
 # Kernel Density
 
+The kernel density estimation mapping is done to show the density of point data on the map. In this case, the point data is the forest fire hotspots across the map.
+
+The users can select city, then from city they can then select which province and from that province, which city they want to observe. Some cities will take longer to load in than others. The city field must be filled in before the map could be plotted. The user then has to choose the year they wish to observe, their choices are from 2015 to 2019. The users can pick whether they want automatic bandwidth for the city being observed, or if they would rather pick fixed bandwidth so that they can pick their bandwidth, their choices ranging from 100 to 1000 bandwidth. For fixed bandwidth, there are four kernel functions that the user can pick from : quartic, gaussian, disc, and epanechikov.
+
+After selecting all the desired fields, the user may press submit. After submitting the fields, the user needs to wait for a bit before the map is plotted out and loaded in. The legend will give context to the density of the points observed.
+
+![](images/image-1993421693.png)
+
 # Spatial Cluster
 
 # Spatiotemporal
