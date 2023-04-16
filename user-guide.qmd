@@ -80,6 +80,10 @@ H1, the Alternative Hypothesis: The distribution of forest fires in this region 
 
 In order to evaluate this statistical test, we must look at the grey envelope on the plot. This envelope represents the Confidence Interval for the chosen significance level. When the observed value lies outside the grey envelope, we can conclude that the observed data is statistically significant at the stated stated significance level. We can therefore conclude that the points have some form of interaction with one another, and the spatial clustering pattern is not random. For specific interpretation on how to determine the spatial clustering pattern observed for each function, please refer to the below tabset.
 
+::: callout-warning
+This statistical test requires sufficient data in order to function properly. As such, one may encounter an error popup when the specified parameters lack sufficient data. If this occurs, please change parameters and try again. For more on error popups, please refer to the Errors section.
+:::
+
 ::: panel-tabset
 ## F Function
 
