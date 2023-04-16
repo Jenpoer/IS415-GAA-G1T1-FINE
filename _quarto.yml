@@ -15,6 +15,8 @@ website:
         text: User Guide
       - href: poster.qmd
         text: Poster
+      - href: research-paper.pdf
+        text: Research Paper
 
 format:
   html:

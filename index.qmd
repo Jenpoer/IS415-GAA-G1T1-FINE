@@ -20,4 +20,6 @@ The project aims to create an interactive web application that allows users to c
 
 [User Guide](https://is415-fire-incidents-explorer.netlify.app/user-guide.html)
 
-Research Paper
+[Project Poster](https://is415-fire-incidents-explorer.netlify.app/poster.html)
+
+[Research Paper](https://is415-fire-incidents-explorer.netlify.app/research-paper.pdf)
