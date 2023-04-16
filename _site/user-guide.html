@@ -203,6 +203,65 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="spatial-cluster" class="level1">
 <h1>Spatial Cluster</h1>
+<p>In order to investigate the presence of spatial point patterns such as spatial clustering, we can use a statistical test known as the Complete Spatial Randomness Test, or CSR for short. This test is a second order spatial point pattern analysis, and it aims to examine how individual points impact the occurance of other points, and what spatial point patterns emerge as a result. In particular, we will be looking out for random, clustered or dispersed point patterns for occurances of fire hospots within the selected city during the specifed month.</p>
+<p>When carrying out the test for CSR, users have 4 function types to choose from: the F function, G function, K function and L function. More info on these in the tabset below. Users may also specify the desired province, city, year and month they desire to examine. Other customisable parameters include the number of simulations to run the test for. This number of simulations correlates to the significance level of the test, can can be viewed in the test parameters in the test parameters box on the top right hand side of the display. Users can also select their desired correction method, which is the edge correction to be applied to the test function in order to reduce bias.</p>
+<p>The hypotheses for the CSR statistical test are as follows:</p>
+<p>H0, the Null Hypothesis: The distribution of forest fires in this region is random.</p>
+<p>H1, the Alternative Hypothesis: The distribution of forest fires in this region is not random.</p>
+<p>In order to evaluate this statistical test, we must look at the grey envelope on the plot. This envelope represents the Confidence Interval for the chosen significance level. When the observed value lies outside the grey envelope, we can conclude that the observed data is statistically significant at the stated stated significance level. We can therefore conclude that the points have some form of interaction with one another, and the spatial clustering pattern is not random. For specific interpretation on how to determine the spatial clustering pattern observed for each function, please refer to the below tabset.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">F Function</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">G Function</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">K Function</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">L Function</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="images/image-157947200.png" class="img-fluid"></p>
+<section id="description" class="level4">
+<h4 class="anchored" data-anchor-id="description"><strong>Description</strong></h4>
+<p>The F Function, also known as the Empty Space function, measures the distribution of distances from an <strong>arbitrary location</strong> (not necessarily a point) to its nearest observed point.</p>
+<p>For more information, please refer to the <a href="https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Fest">official documentation</a>.</p>
+</section>
+<section id="interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation"><strong>Interpretation</strong></h4>
+<p>If the observed F Function follows a concave upwards curve (increases slowly at first, then more rapidly at longer distances), we can say that the observed fires follow a clustered pattern. However, if the observed F function follows a concave downwards curve (increases rapidly at first, then more slowly at longer distances), we can say that the observed fires follow a dispersed pattern.</p>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="images/image-772708590.png" class="img-fluid"></p>
+<section id="description-1" class="level4">
+<h4 class="anchored" data-anchor-id="description-1"><strong>Description</strong></h4>
+<p>The G Function measures the distribution of distances from an <strong>arbitrary point</strong> to its nearest neighbour.</p>
+<p>For more information, please refer to the <a href="https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Gest">official documentation</a>.</p>
+</section>
+<section id="interpretation-1" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-1"><strong>Interpretation</strong></h4>
+<p>When the observed G Function value is greater than the estimate (lies above the theoretical), we can say that the observed fires follow a clustered pattern. Generally, this lies below the theoretical estimate. On the other hand, when the observed value is less than the estimate, we can say the observed fires follow a dispersed pattern. Generally, this lies above the theoretical estimate.</p>
+</section>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="images/image-1753337502.png" class="img-fluid"></p>
+<section id="description-2" class="level4">
+<h4 class="anchored" data-anchor-id="description-2"><strong>Description</strong></h4>
+<p>Ripley’s K Function attempts to combat the limitation of the nearest neighbours approach of using only the nearest distance by using an estimate of spatial dependence instead. This is done by taking a measure of how many events lie about each points at varying radius length, and computing this calculation for all point events.</p>
+<p>For more information, please refer to the <a href="https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Kest">official documentation</a>.</p>
+</section>
+<section id="interpretation-of-statistical-test-result" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-of-statistical-test-result"><strong>Interpretation of Statistical Test Result</strong></h4>
+<p>When the observed K Function value is greater than, or lies above the theotetical, we can say that the forest fire hotspots are clustered and this radius. However, when the observer value lies below the theotetical value, we can assume that the forest fires are dispersed at this radius.</p>
+</section>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><img src="images/image-1534380091.png" class="img-fluid"></p>
+<section id="description-3" class="level4">
+<h4 class="anchored" data-anchor-id="description-3"><strong>Description</strong></h4>
+<p>The L function is the normalised version of the K function, where we take the K function divided by pi, the squared rooted to get the corresponding L function value.</p>
+<p>For more information, please refer to the <a href="https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Lest">official documentation</a>.</p>
+</section>
+<section id="interpretation-2" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-2"><strong>Interpretation</strong></h4>
+<p>When the L value lies above the theoretical value, the we can say that the forest fire hotspots for this region are spatially clustered at that particular distance. On the other hand, when the L value lies below the theoretical value, the forest fire hotspots are spatially dispersed at this distance.</p>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="spatiotemporal" class="level1">
 <h1>Spatiotemporal</h1>
@@ -212,15 +271,15 @@ ul.task-list li input[type="checkbox"] {
 <p>Users can input a specific sub-district to look for spatiotemporal autocorrelation throughout a specific year. All fields of the filter must be filled before an output can be computed.</p>
 <p>There are three possible types of outputs, adjusted by the Plot Type selection dropdown: Contour, Image, and Perspective.</p>
 <div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Contour</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Image</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Perspective</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Contour</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Image</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Perspective</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p><img src="images/User Guide/Spatiotemporal_STIK_contour.png" class="img-fluid"></p>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p><img src="images/User Guide/Spatiotemporal_STIK_image.png" class="img-fluid"></p>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p><img src="images/User Guide/Spatiotemporal_STIK_perspective.png" class="img-fluid"></p>
 <p>For perspective plots, there are two additional parameters that can be adjusted: azimuthal angle and colatitude. They are in the form of sliders bounded from 0-360. This allows users to adjust the perspective of the 3D plot. Azimuthal Angle rotates the perspective horizontally, whereas Colatitude rotates the perspective vertically.</p>
 </div>

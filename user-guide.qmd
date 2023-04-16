@@ -68,6 +68,76 @@ After selecting all the desired fields, the user may press submit. After submitt
 
 # Spatial Cluster
 
+In order to investigate the presence of spatial point patterns such as spatial clustering, we can use a statistical test known as the Complete Spatial Randomness Test, or CSR for short. This test is a second order spatial point pattern analysis, and it aims to examine how individual points impact the occurance of other points, and what spatial point patterns emerge as a result. In particular, we will be looking out for random, clustered or dispersed point patterns for occurances of fire hospots within the selected city during the specifed month.
+
+When carrying out the test for CSR, users have 4 function types to choose from: the F function, G function, K function and L function. More info on these in the tabset below. Users may also specify the desired province, city, year and month they desire to examine. Other customisable parameters include the number of simulations to run the test for. This number of simulations correlates to the significance level of the test, can can be viewed in the test parameters in the test parameters box on the top right hand side of the display. Users can also select their desired correction method, which is the edge correction to be applied to the test function in order to reduce bias.
+
+The hypotheses for the CSR statistical test are as follows:
+
+H0, the Null Hypothesis: The distribution of forest fires in this region is random.
+
+H1, the Alternative Hypothesis: The distribution of forest fires in this region is not random.
+
+In order to evaluate this statistical test, we must look at the grey envelope on the plot. This envelope represents the Confidence Interval for the chosen significance level. When the observed value lies outside the grey envelope, we can conclude that the observed data is statistically significant at the stated stated significance level. We can therefore conclude that the points have some form of interaction with one another, and the spatial clustering pattern is not random. For specific interpretation on how to determine the spatial clustering pattern observed for each function, please refer to the below tabset.
+
+::: panel-tabset
+## F Function
+
+![](images/image-157947200.png)
+
+#### **Description**
+
+The F Function, also known as the Empty Space function, measures the distribution of distances from an **arbitrary location** (not necessarily a point) to its nearest observed point.
+
+For more information, please refer to the [official documentation](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Fest).
+
+#### **Interpretation**
+
+If the observed F Function follows a concave upwards curve (increases slowly at first, then more rapidly at longer distances), we can say that the observed fires follow a clustered pattern. However, if the observed F function follows a concave downwards curve (increases rapidly at first, then more slowly at longer distances), we can say that the observed fires follow a dispersed pattern.
+
+## G Function
+
+![](images/image-772708590.png)
+
+#### **Description**
+
+The G Function measures the distribution of distances from an **arbitrary point** to its nearest neighbour.
+
+For more information, please refer to the [official documentation](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Gest).
+
+#### **Interpretation**
+
+When the observed G Function value is greater than the estimate (lies above the theoretical), we can say that the observed fires follow a clustered pattern. Generally, this lies below the theoretical estimate. On the other hand, when the observed value is less than the estimate, we can say the observed fires follow a dispersed pattern. Generally, this lies above the theoretical estimate.
+
+## K Function
+
+![](images/image-1753337502.png)
+
+#### **Description**
+
+Ripley's K Function attempts to combat the limitation of the nearest neighbours approach of using only the nearest distance by using an estimate of spatial dependence instead. This is done by taking a measure of how many events lie about each points at varying radius length, and computing this calculation for all point events.
+
+For more information, please refer to the [official documentation](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Kest).
+
+#### **Interpretation of Statistical Test Result**
+
+When the observed K Function value is greater than, or lies above the theotetical, we can say that the forest fire hotspots are clustered and this radius. However, when the observer value lies below the theotetical value, we can assume that the forest fires are dispersed at this radius.
+
+## L Function
+
+![](images/image-1534380091.png)
+
+#### **Description**
+
+The L function is the normalised version of the K function, where we take the K function divided by pi, the squared rooted to get the corresponding L function value.
+
+For more information, please refer to the [official documentation](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Lest).
+
+#### **Interpretation**
+
+When the L value lies above the theoretical value, the we can say that the forest fire hotspots for this region are spatially clustered at that particular distance. On the other hand, when the L value lies below the theoretical value, the forest fire hotspots are spatially dispersed at this distance.
+:::
+
 # Spatiotemporal
 
 ## Space-time K-function
